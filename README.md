@@ -3,10 +3,10 @@
 <body>
     <h1>Demand Forecasting</h1>
 
-   <p>This repository contains code and analysis for a demand forecasting project using LightGBM.</p>
+  <p>This repository contains code and analysis for a demand forecasting project using LightGBM.</p>
 
-   <h2>Table of Contents</h2>
-    <ul>
+  <h2>Table of Contents</h2>
+ <ul>
         <li><a href="#dataset-information">Dataset Information</a></li>
         <li><a href="#eda">Exploratory Data Analysis (EDA)</a></li>
         <li><a href="#feature-engineering">Feature Engineering</a></li>
@@ -25,7 +25,7 @@
         <li>Sales</li>
     </ul>
 
-  <h2 id="eda">2. Exploratory Data Analysis (EDA)</h2>
+<h2 id="eda">2. Exploratory Data Analysis (EDA)</h2>
     <p>EDA was conducted to understand the dataset's structure, identify missing values, and explore relationships between features. Key findings include:</p>
     <ul>
         <li>Sales trends over time</li>
@@ -33,24 +33,22 @@
         <li>Seasonality patterns in sales data</li>
     </ul>
 
-   <h2 id="feature-engineering">3. Feature Engineering</h2>
-    <p>Six new columns were created based on price and week to enhance model performance. These include:</p>
+  <h2 id="feature-engineering">3. Feature Engineering</h2>
+    <p>Several new columns were created to enhance model performance:</p>
     <ul>
-        <li>Price Trend</li>
-        <li>Weekday/Weekend Indicator</li>
-        <li>Discount Percentage</li>
-        <li>Rolling Average of Sales</li>
-        <li>Sales Lag Features</li>
-        <li>Price Elasticity</li>
+        <li><code>day</code>, <code>month</code>, and <code>year</code>: Extracted from the <code>week</code> column to provide temporal granularity.</li>
+        <li><code>dif_bt</code>: Calculated as the difference between <code>base_price</code> and <code>total_price</code>.</li>
+        <li><code>rd_base</code>: Computed as <code>dif_bt</code> divided by <code>base_price</code>.</li>
+        <li><code>rd_total</code>: Computed as <code>dif_bt</code> divided by <code>total_price</code>.</li>
     </ul>
 
-   <h2 id="model-selection">4. Model Selection</h2>
+  <h2 id="model-selection">4. Model Selection</h2>
     <p>Various models were evaluated, including:</p>
     <ul>
-        <li>Linear Regression</li>
+        <li>XGBoost Regression</li>
         <li>Random Forest</li>
         <li>LightGBM</li>
-        <li>XGBoost</li>
+        <li>Gradient Boost</li>
     </ul>
     <p>LightGBM was selected for its superior performance and efficiency.</p>
 
@@ -59,16 +57,26 @@
     <ul>
         <li>Fast training speed and low memory usage</li>
         <li>Excellent performance on large datasets</li>
-        <li>Support for categorical features and missing values</li>
         <li>Strong predictive accuracy compared to other models</li>
     </ul>
 
-  <h2 id="test-data-prediction">6. Test Data Prediction</h2>
+   <h2 id="test-data-prediction">6. Test Data Prediction</h2>
     <p>The trained LightGBM model was used to predict demand on the test dataset. Results include:</p>
     <ul>
-        <li>Mean Absolute Error (MAE): <code>&lt;insert value&gt;</code></li>
-        <li>Root Mean Squared Error (RMSE): <code>&lt;insert value&gt;</code></li>
+        <li>Mean Absolute Error (MAE): <code>24.757</code></li>
+        <li>R2 Score: <code>0.8126&</code></li>
     </ul>
     <p>Predictions align closely with actual sales trends, validating the model's effectiveness.</p>
+
+<h2 id="license">7. License</h2>
+    <p>This project is licensed under the MIT License. See the <a href="https://opensource.org/licenses/MIT">LICENSE</a> file for details.</p>
+
+ <h2 id="author">8. Author</h2>
+    <p>Created by <strong>Tark Patel</strong>. Connect with me:</p>
+    <ul>
+        <li><a href="https://www.linkedin.com/in/tark-patel/">LinkedIn</a></li>
+        <li><a href="https://www.kaggle.com/tark01">Kaggle</a></li>
+    </ul>    
 </body>
 </html>
+
